@@ -22,7 +22,7 @@ export const Header = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <h1 className="text-2xl font-bold bg-gradient-to-r from-scrap-600 to-scrap-800 bg-clip-text text-transparent">
-              My Scrap
+              REGrab
             </h1>
           </div>
           <div className="flex items-center space-x-4">
