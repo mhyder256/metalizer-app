@@ -2,17 +2,26 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { DollarSign, Truck, Scale } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export const QuotationCard = () => {
+  const isMobile = useIsMobile();
+
   return (
-    <Card className="p-6 backdrop-blur-sm bg-white/30 border border-gray-200 shadow-lg transition-all duration-300 hover:shadow-xl animate-fade-in">
+    <Card className={`backdrop-blur-sm bg-white/30 border border-gray-200 shadow-lg transition-all duration-300 hover:shadow-xl animate-fade-in ${
+      isMobile ? 'p-4' : 'p-6'
+    }`}>
       <div className="space-y-4">
-        <div className="flex justify-between items-start">
+        <div className={`flex ${isMobile ? 'flex-col space-y-2' : 'justify-between items-start'}`}>
           <div>
-            <h3 className="text-xl font-semibold text-scrap-800">Your Quotation</h3>
+            <h3 className={`font-semibold text-scrap-800 ${isMobile ? 'text-lg' : 'text-xl'}`}>
+              Your Quotation
+            </h3>
             <p className="text-sm text-scrap-600 mt-1">Based on your submitted photos</p>
           </div>
-          <span className="text-2xl font-bold text-scrap-800">RM 245.00</span>
+          <span className={`font-bold text-scrap-800 ${isMobile ? 'text-xl' : 'text-2xl'}`}>
+            RM 245.00
+          </span>
         </div>
 
         <div className="space-y-2">
@@ -34,16 +43,16 @@ export const QuotationCard = () => {
           </div>
         </div>
 
-        <div className="pt-4 space-y-3">
+        <div className={`pt-4 space-y-3 ${isMobile ? 'mt-2' : ''}`}>
           <Button variant="outline" className="w-full">
-            <Truck className="h-4 w-4 mr-2" />
+            <Truck className={`mr-2 ${isMobile ? 'h-3.5 w-3.5' : 'h-4 w-4'}`} />
             Schedule Pickup
           </Button>
           <Button className="w-full bg-scrap-800 hover:bg-scrap-900 text-white" disabled>
-            <DollarSign className="h-4 w-4 mr-2" />
+            <DollarSign className={`mr-2 ${isMobile ? 'h-3.5 w-3.5' : 'h-4 w-4'}`} />
             Payment Available After Pickup Confirmation
           </Button>
-          <p className="text-xs text-center text-scrap-600">
+          <p className={`text-center text-scrap-600 ${isMobile ? 'text-[10px]' : 'text-xs'}`}>
             Digital payment will be processed after pickup schedule is confirmed
           </p>
         </div>
