@@ -3,9 +3,11 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { DollarSign, Truck, Scale } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useNavigate } from "react-router-dom";
 
 export const QuotationCard = () => {
   const isMobile = useIsMobile();
+  const navigate = useNavigate();
 
   return (
     <Card className={`backdrop-blur-sm bg-white/30 border border-gray-200 shadow-lg transition-all duration-300 hover:shadow-xl animate-fade-in ${
@@ -44,7 +46,11 @@ export const QuotationCard = () => {
         </div>
 
         <div className={`pt-4 space-y-3 ${isMobile ? 'mt-2' : ''}`}>
-          <Button variant="outline" className="w-full">
+          <Button 
+            variant="outline" 
+            className="w-full"
+            onClick={() => navigate('/schedule-pickup')}
+          >
             <Truck className={`mr-2 ${isMobile ? 'h-3.5 w-3.5' : 'h-4 w-4'}`} />
             Schedule Pickup
           </Button>
