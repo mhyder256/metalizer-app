@@ -17,9 +17,9 @@ const Home = () => {
         <div className="max-w-5xl mx-auto">
           {/* Hero Section */}
           <div className="text-center space-y-6 animate-fade-in mb-16">
-            <h1 className={`${isMobile ? 'text-4xl' : 'text-6xl'} font-bold text-scrap-800 dark:text-white leading-tight`}>
+            <h1 className={`${isMobile ? 'text-5xl' : 'text-7xl'} font-bold text-scrap-800 dark:text-white leading-tight`}>
               {t("home.title")} <br />
-              <span className="text-green-600 dark:text-green-400">{t("home.subtitle")}</span>
+              <span className={`${isMobile ? 'text-3xl' : 'text-4xl'} text-green-600 dark:text-green-400`}>{t("home.subtitle")}</span>
             </h1>
             <div className="flex justify-center gap-4 pt-4">
               <Link to="/quote">
@@ -64,4 +64,3 @@ const Home = () => {
 };
 
 export default Home;
-
