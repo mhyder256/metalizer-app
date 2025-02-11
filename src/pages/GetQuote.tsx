@@ -3,7 +3,7 @@ import { Header } from "@/components/Header";
 import { UploadSection } from "@/components/UploadSection";
 import { QuotationCard } from "@/components/QuotationCard";
 
-const Index = () => {
+const GetQuote = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
       <Header />
@@ -11,7 +11,7 @@ const Index = () => {
         <div className="max-w-4xl mx-auto space-y-8">
           <div className="text-center space-y-4 animate-fade-in">
             <h1 className="text-4xl font-bold text-scrap-800">
-              Recycle Scrap Metal, Effortlessly
+              Get Your Instant Quote
             </h1>
             <p className="text-lg text-scrap-600 max-w-2xl mx-auto">
               Upload photos of your scrap metal, get instant quotes, and schedule pickup
@@ -29,4 +29,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default GetQuote;
